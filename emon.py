@@ -55,7 +55,7 @@ def CalcPower(pin):
         sumI = 0.0
         a = 0
         while a < NUMBER_OF_SAMPLES:
-                sumI += float(math.sqr(buffer[a] - median))
+                sumI += math.pow(buffer[a] - median, 2)
                 a += 1
 
         return VOLT_AC * ICAL * VOLT_PER_TICK * math.sqrt(sumI / NUMBER_OF_SAMPLES)
